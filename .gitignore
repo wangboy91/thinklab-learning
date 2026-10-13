@@ -1,0 +1,10 @@
+data/
+*.sqlite*
+*.db
+*.log
+*.pid
+__pycache__/
+test-runners/
+.env*
+local/
+.migration-*
