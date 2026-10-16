@@ -1,0 +1,143 @@
+{
+  "date": "2026-10-13",
+  "scope": "finish-existing-beginner-route-only",
+  "newCompleteIds": [
+    121,
+    26
+  ],
+  "allCompleteCount": 9,
+  "catalogCount": 44,
+  "routeIdsUnchanged": true,
+  "routes": [
+    {
+      "id": "thinking-basics",
+      "ids": [
+        1,
+        20,
+        217,
+        283,
+        121,
+        26
+      ],
+      "completeIds": [
+        1,
+        20,
+        217,
+        283,
+        121,
+        26
+      ],
+      "pendingIds": []
+    },
+    {
+      "id": "core-methods",
+      "ids": [
+        1,
+        283,
+        3,
+        20,
+        704,
+        35,
+        33,
+        206,
+        104,
+        46,
+        70
+      ],
+      "completeIds": [
+        1,
+        283,
+        20,
+        704,
+        35
+      ],
+      "pendingIds": [
+        3,
+        33,
+        206,
+        104,
+        46,
+        70
+      ]
+    },
+    {
+      "id": "array-toolkit",
+      "ids": [
+        1,
+        217,
+        283,
+        26,
+        125,
+        167,
+        11,
+        3,
+        219
+      ],
+      "completeIds": [
+        1,
+        217,
+        283,
+        26,
+        125
+      ],
+      "pendingIds": [
+        167,
+        11,
+        3,
+        219
+      ]
+    },
+    {
+      "id": "structures-basics",
+      "ids": [
+        20,
+        155,
+        21,
+        206,
+        141,
+        94,
+        102,
+        104,
+        226
+      ],
+      "completeIds": [
+        20
+      ],
+      "pendingIds": [
+        155,
+        21,
+        206,
+        141,
+        94,
+        102,
+        104,
+        226
+      ]
+    }
+  ],
+  "verification": {
+    "traceOracleCases": 4716,
+    "referenceCasesPerLanguage": 75,
+    "languagesExecuted": [
+      "C#",
+      "Python",
+      "Java",
+      "JavaScript",
+      "TypeScript native stripping"
+    ],
+    "tscFullCheck": "not run",
+    "coreRouteSyncSQLiteHTTP": "passed",
+    "physicalPhone": "not verified",
+    "realChrome": {
+      "pages": [
+        121,
+        26
+      ],
+      "allExamplesTraversed": true,
+      "reverseReplayPlayStopAndFiveLanguages": true,
+      "noPlaceholderOrStartupError": true,
+      "readOnlyNoPersonalProgressMutation": true
+    }
+  },
+  "publication": "local mixed uncommitted; no push"
+}

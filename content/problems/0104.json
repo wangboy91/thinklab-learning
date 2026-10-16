@@ -1,0 +1,69 @@
+{
+  "title": "二叉树的最大深度",
+  "difficulty": "简单",
+  "topic": "二叉树",
+  "concept": "逐层队列 · 数层数",
+  "time": "20 分钟",
+  "question": "返回从根到最远叶子路径上的节点数。空树深度0，只有根深度1。本页用广度优先遍历，每次完整处理一层，层数就是最大深度。",
+  "think": "一层节点正在出队时，它们的孩子已经入队了。怎样避免把新孩子也算进同一层？",
+  "hints": [
+    "可以用队列按从上到下顺序处理树，而不递归。",
+    "每层开始先固定本层数量size，再增加depth。之后恰好出队size次。",
+    "出队节点的非空孩子按左、右顺序加入队尾；孩子留给下一层。队列空后返回depth。"
+  ],
+  "explain": "[3,9,20,null,null,15,7]：第1层队列只有根3，处理后加入9和20；第2层先固定数量2，9无孩子，20加入15和7；这两个新节点留第3层。第三层处理完队列空，返回3。null表示缺少节点，动画按真实父子边建树，不能简单把数组下标当满二叉树。",
+  "why": "队列在每层开始恰好包含该层节点。固定数量后，只处理这一批，新增孩子正是下一层。由根的第1层逐层推进，最后处理的层对应最长根到叶路径，层数按节点数计。",
+  "complexity": "时间O(n)，每个节点出入队一次；最坏额外空间O(n)。C#/Python/Java用队列，JS/TS用数组和队头下标避免反复shift；数组保留已处理引用，仍是O(n)。动画图与快照另计。",
+  "errors": [
+    "边处理边用变化的队列长度作本层次数，把下一层混进来。",
+    "把边数当深度，单根错误返回0。",
+    "将null缺位当真实节点，或使用数组下标堆公式误读紧凑层序。"
+  ],
+  "exampleText": "[3,9,20,null,null,15,7] → 3；[1,null,2] → 2；空树 → 0。",
+  "challenge": "[1,null,2,3]的3是谁的孩子，深度是多少？为什么出队前要固定本层数量？",
+  "boardLabel": "真实父子边 · 固定本层数量 · 未处理队列",
+  "trace": "treeDepthTrace",
+  "codeNote": "参考包含自写TreeNode定义；平台已提供时不要重复定义。动画层序数组只是演示输入，代码接收真实树节点。队列图只画尚未处理的节点。",
+  "examples": [
+    {
+      "label": "[3,9,20,null,null,15,7]",
+      "tree": [
+        3,
+        9,
+        20,
+        null,
+        null,
+        15,
+        7
+      ]
+    },
+    {
+      "label": "[1,null,2,3] · 紧凑层序",
+      "tree": [
+        1,
+        null,
+        2,
+        3
+      ]
+    },
+    {
+      "label": "单根",
+      "tree": [
+        1
+      ]
+    },
+    {
+      "label": "空树",
+      "tree": []
+    }
+  ],
+  "id": 104,
+  "domain": "algorithm",
+  "type": "algorithm_trace",
+  "source": {
+    "kind": "original_authoring",
+    "officialUrl": "https://leetcode.com/problems/maximum-depth-of-binary-tree/",
+    "officialVerifiedDate": "2026-10-13",
+    "license": "MIT for original teaching/code; third-party exercise rights excluded"
+  }
+}

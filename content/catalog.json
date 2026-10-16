@@ -1,0 +1,1416 @@
+{
+  "catalog": [
+    {
+      "id": 1,
+      "title": "两数之和（简单）",
+      "sources": [
+        {
+          "kind": "official_link",
+          "url": "https://leetcode.cn/problems/two-sum/"
+        }
+      ],
+      "topic": "数组与哈希",
+      "difficulty": "简单",
+      "recommendedOrder": 1,
+      "representative": true,
+      "variants": [
+        49,
+        128,
+        217
+      ],
+      "officialUrl": "https://leetcode.cn/problems/two-sum/",
+      "domain": "algorithm",
+      "type": "algorithm",
+      "learningFormat": "state_steps",
+      "explanationBlocks": [
+        "question",
+        "examples",
+        "think",
+        "hints",
+        "state_steps",
+        "explanation",
+        "reference_code",
+        "complexity",
+        "common_errors"
+      ],
+      "complete": true,
+      "status": "complete"
+    },
+    {
+      "id": 2,
+      "title": "两数相加（中等）",
+      "sources": [
+        {
+          "kind": "official_link",
+          "url": "https://leetcode.cn/problemset/"
+        }
+      ],
+      "topic": "链表",
+      "difficulty": "待核对",
+      "recommendedOrder": 5002,
+      "representative": false,
+      "variants": [],
+      "officialUrl": "https://leetcode.cn/problemset/",
+      "domain": "algorithm",
+      "type": "algorithm",
+      "learningFormat": "state_steps",
+      "explanationBlocks": [
+        "question",
+        "examples",
+        "think",
+        "hints",
+        "state_steps",
+        "explanation",
+        "reference_code",
+        "complexity",
+        "common_errors"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "无重复字符的最长子串（中等）",
+      "sources": [
+        {
+          "kind": "official_link",
+          "url": "https://leetcode.cn/problemset/"
+        }
+      ],
+      "topic": "滑动窗口",
+      "difficulty": "中等",
+      "recommendedOrder": 2003,
+      "representative": true,
+      "variants": [
+        76,
+        219
+      ],
+      "officialUrl": "https://leetcode.com/problems/longest-substring-without-repeating-characters/",
+      "domain": "algorithm",
+      "type": "algorithm_trace",
+      "learningFormat": "state_steps",
+      "explanationBlocks": [
+        "question",
+        "examples",
+        "think",
+        "hints",
+        "state_steps",
+        "explanation",
+        "reference_code",
+        "complexity",
+        "common_errors"
+      ],
+      "complete": true,
+      "status": "complete"
+    },
+    {
+      "id": 11,
+      "title": "盛最多水的容器（中等）",
+      "sources": [
+        {
+          "kind": "official_link",
+          "url": "https://leetcode.cn/problemset/"
+        }
+      ],
+      "topic": "双指针",
+      "difficulty": "待核对",
+      "recommendedOrder": 1011,
+      "representative": false,
+      "variants": [],
+      "officialUrl": "https://leetcode.cn/problemset/",
+      "domain": "algorithm",
+      "type": "algorithm",
+      "learningFormat": "state_steps",
+      "explanationBlocks": [
+        "question",
+        "examples",
+        "think",
+        "hints",
+        "state_steps",
+        "explanation",
+        "reference_code",
+        "complexity",
+        "common_errors"
+      ]
+    },
+    {
+      "id": 15,
+      "title": "三数之和（中等）",
+      "sources": [
+        {
+          "kind": "official_link",
+          "url": "https://leetcode.cn/problemset/"
+        }
+      ],
+      "topic": "双指针",
+      "difficulty": "待核对",
+      "recommendedOrder": 1015,
+      "representative": false,
+      "variants": [],
+      "officialUrl": "https://leetcode.cn/problemset/",
+      "domain": "algorithm",
+      "type": "algorithm",
+      "learningFormat": "state_steps",
+      "explanationBlocks": [
+        "question",
+        "examples",
+        "think",
+        "hints",
+        "state_steps",
+        "explanation",
+        "reference_code",
+        "complexity",
+        "common_errors"
+      ]
+    },
+    {
+      "id": 20,
+      "title": "有效的括号（简单）",
+      "sources": [
+        {
+          "kind": "official_link",
+          "url": "https://leetcode.cn/problems/valid-parentheses/"
+        }
+      ],
+      "topic": "栈",
+      "difficulty": "简单",
+      "recommendedOrder": 3020,
+      "representative": true,
+      "variants": [
+        42,
+        155,
+        1047
+      ],
+      "officialUrl": "https://leetcode.cn/problems/valid-parentheses/",
+      "domain": "algorithm",
+      "type": "algorithm",
+      "learningFormat": "state_steps",
+      "explanationBlocks": [
+        "question",
+        "examples",
+        "think",
+        "hints",
+        "state_steps",
+        "explanation",
+        "reference_code",
+        "complexity",
+        "common_errors"
+      ],
+      "complete": true,
+      "status": "complete"
+    },
+    {
+      "id": 21,
+      "title": "合并两个有序链表（简单）",
+      "sources": [
+        {
+          "kind": "official_link",
+          "url": "https://leetcode.cn/problemset/"
+        },
+        {
+          "kind": "official_link",
+          "url": "https://leetcode.com/problems/merge-two-sorted-lists/"
+        }
+      ],
+      "topic": "链表",
+      "difficulty": "简单",
+      "recommendedOrder": 5021,
+      "representative": false,
+      "variants": [],
+      "officialUrl": "https://leetcode.com/problems/merge-two-sorted-lists/",
+      "domain": "algorithm",
+      "type": "algorithm",
+      "learningFormat": "state_steps",
+      "explanationBlocks": [
+        "question",
+        "examples",
+        "think",
+        "hints",
+        "state_steps",
+        "explanation",
+        "reference_code",
+        "complexity",
+        "common_errors"
+      ]
+    },
+    {
+      "id": 26,
+      "title": "删除有序数组中的重复项",
+      "sources": [
+        {
+          "kind": "official_link",
+          "url": "https://leetcode.cn/problemset/"
+        }
+      ],
+      "topic": "双指针",
+      "difficulty": "简单",
+      "recommendedOrder": 1026,
+      "representative": false,
+      "variants": [],
+      "officialUrl": "https://leetcode.com/problems/remove-duplicates-from-sorted-array/",
+      "domain": "algorithm",
+      "type": "algorithm_trace",
+      "learningFormat": "state_steps",
+      "explanationBlocks": [
+        "question",
+        "examples",
+        "think",
+        "hints",
+        "state_steps",
+        "explanation",
+        "reference_code",
+        "complexity",
+        "common_errors"
+      ],
+      "complete": true,
+      "status": "complete"
+    },
+    {
+      "id": 27,
+      "title": "移除元素",
+      "sources": [
+        {
+          "kind": "official_link",
+          "url": "https://leetcode.cn/problemset/"
+        }
+      ],
+      "topic": "双指针",
+      "difficulty": "待核对",
+      "recommendedOrder": 1027,
+      "representative": false,
+      "variants": [],
+      "officialUrl": "https://leetcode.cn/problemset/",
+      "domain": "algorithm",
+      "type": "algorithm",
+      "learningFormat": "state_steps",
+      "explanationBlocks": [
+        "question",
+        "examples",
+        "think",
+        "hints",
+        "state_steps",
+        "explanation",
+        "reference_code",
+        "complexity",
+        "common_errors"
+      ]
+    },
+    {
+      "id": 33,
+      "title": "搜索旋转排序数组（中等）",
+      "sources": [
+        {
+          "kind": "official_link",
+          "url": "https://leetcode.cn/problemset/"
+        }
+      ],
+      "topic": "二分与堆",
+      "difficulty": "待核对",
+      "recommendedOrder": 4033,
+      "representative": true,
+      "variants": [
+        34,
+        215
+      ],
+      "officialUrl": "https://leetcode.cn/problemset/",
+      "domain": "algorithm",
+      "type": "algorithm",
+      "learningFormat": "state_steps",
+      "explanationBlocks": [
+        "question",
+        "examples",
+        "think",
+        "hints",
+        "state_steps",
+        "explanation",
+        "reference_code",
+        "complexity",
+        "common_errors"
+      ]
+    },
+    {
+      "id": 34,
+      "title": "在排序数组中查找元素的第一个和最后一个位置（中等）",
+      "sources": [
+        {
+          "kind": "official_link",
+          "url": "https://leetcode.cn/problemset/"
+        }
+      ],
+      "topic": "二分与堆",
+      "difficulty": "待核对",
+      "recommendedOrder": 4034,
+      "representative": false,
+      "variants": [],
+      "officialUrl": "https://leetcode.cn/problemset/",
+      "domain": "algorithm",
+      "type": "algorithm",
+      "learningFormat": "state_steps",
+      "explanationBlocks": [
+        "question",
+        "examples",
+        "think",
+        "hints",
+        "state_steps",
+        "explanation",
+        "reference_code",
+        "complexity",
+        "common_errors"
+      ]
+    },
+    {
+      "id": 35,
+      "title": "搜索插入位置",
+      "topic": "二分与堆",
+      "sources": [
+        {
+          "kind": "official_link",
+          "url": "https://leetcode.com/problems/search-insert-position/"
+        }
+      ],
+      "representative": false,
+      "variants": [],
+      "recommendedOrder": 35,
+      "difficulty": "简单",
+      "domain": "algorithm",
+      "type": "algorithm_trace",
+      "learningFormat": "state_steps",
+      "officialUrl": "https://leetcode.com/problems/search-insert-position/",
+      "complete": true,
+      "status": "complete",
+      "explanationBlocks": [
+        "question",
+        "examples",
+        "think",
+        "hints",
+        "state_steps",
+        "explanation",
+        "reference_code",
+        "complexity",
+        "common_errors"
+      ]
+    },
+    {
+      "id": 42,
+      "title": "接雨水（困难）",
+      "sources": [
+        {
+          "kind": "official_link",
+          "url": "https://leetcode.cn/problemset/"
+        }
+      ],
+      "topic": "栈",
+      "difficulty": "待核对",
+      "recommendedOrder": 3042,
+      "representative": false,
+      "variants": [],
+      "officialUrl": "https://leetcode.cn/problemset/",
+      "domain": "algorithm",
+      "type": "algorithm",
+      "learningFormat": "state_steps",
+      "explanationBlocks": [
+        "question",
+        "examples",
+        "think",
+        "hints",
+        "state_steps",
+        "explanation",
+        "reference_code",
+        "complexity",
+        "common_errors"
+      ]
+    },
+    {
+      "id": 46,
+      "title": "全排列（中等）",
+      "sources": [
+        {
+          "kind": "official_link",
+          "url": "https://leetcode.cn/problemset/"
+        }
+      ],
+      "topic": "回溯与图",
+      "difficulty": "待核对",
+      "recommendedOrder": 7046,
+      "representative": true,
+      "variants": [
+        78,
+        200,
+        994
+      ],
+      "officialUrl": "https://leetcode.cn/problemset/",
+      "domain": "algorithm",
+      "type": "algorithm",
+      "learningFormat": "state_steps",
+      "explanationBlocks": [
+        "question",
+        "examples",
+        "think",
+        "hints",
+        "state_steps",
+        "explanation",
+        "reference_code",
+        "complexity",
+        "common_errors"
+      ]
+    },
+    {
+      "id": 49,
+      "title": "字母异位词分组（中等）",
+      "sources": [
+        {
+          "kind": "official_link",
+          "url": "https://leetcode.cn/problemset/"
+        }
+      ],
+      "topic": "数组与哈希",
+      "difficulty": "待核对",
+      "recommendedOrder": 49,
+      "representative": false,
+      "variants": [],
+      "officialUrl": "https://leetcode.cn/problemset/",
+      "domain": "algorithm",
+      "type": "algorithm",
+      "learningFormat": "state_steps",
+      "explanationBlocks": [
+        "question",
+        "examples",
+        "think",
+        "hints",
+        "state_steps",
+        "explanation",
+        "reference_code",
+        "complexity",
+        "common_errors"
+      ]
+    },
+    {
+      "id": 53,
+      "title": "最大子数组和（中等）",
+      "sources": [
+        {
+          "kind": "official_link",
+          "url": "https://leetcode.cn/problemset/"
+        }
+      ],
+      "topic": "动态规划",
+      "difficulty": "待核对",
+      "recommendedOrder": 8053,
+      "representative": false,
+      "variants": [],
+      "officialUrl": "https://leetcode.cn/problemset/",
+      "domain": "algorithm",
+      "type": "algorithm",
+      "learningFormat": "state_steps",
+      "explanationBlocks": [
+        "question",
+        "examples",
+        "think",
+        "hints",
+        "state_steps",
+        "explanation",
+        "reference_code",
+        "complexity",
+        "common_errors"
+      ]
+    },
+    {
+      "id": 70,
+      "title": "爬楼梯（简单）",
+      "sources": [
+        {
+          "kind": "official_link",
+          "url": "https://leetcode.cn/problemset/"
+        }
+      ],
+      "topic": "动态规划",
+      "difficulty": "待核对",
+      "recommendedOrder": 8070,
+      "representative": true,
+      "variants": [
+        53,
+        121,
+        152,
+        198,
+        322
+      ],
+      "officialUrl": "https://leetcode.cn/problemset/",
+      "domain": "algorithm",
+      "type": "algorithm",
+      "learningFormat": "state_steps",
+      "explanationBlocks": [
+        "question",
+        "examples",
+        "think",
+        "hints",
+        "state_steps",
+        "explanation",
+        "reference_code",
+        "complexity",
+        "common_errors"
+      ]
+    },
+    {
+      "id": 76,
+      "title": "最小覆盖子串（困难）",
+      "sources": [
+        {
+          "kind": "official_link",
+          "url": "https://leetcode.cn/problemset/"
+        }
+      ],
+      "topic": "滑动窗口",
+      "difficulty": "待核对",
+      "recommendedOrder": 2076,
+      "representative": false,
+      "variants": [],
+      "officialUrl": "https://leetcode.cn/problemset/",
+      "domain": "algorithm",
+      "type": "algorithm",
+      "learningFormat": "state_steps",
+      "explanationBlocks": [
+        "question",
+        "examples",
+        "think",
+        "hints",
+        "state_steps",
+        "explanation",
+        "reference_code",
+        "complexity",
+        "common_errors"
+      ]
+    },
+    {
+      "id": 78,
+      "title": "子集（中等）",
+      "sources": [
+        {
+          "kind": "official_link",
+          "url": "https://leetcode.cn/problemset/"
+        }
+      ],
+      "topic": "回溯与图",
+      "difficulty": "待核对",
+      "recommendedOrder": 7078,
+      "representative": false,
+      "variants": [],
+      "officialUrl": "https://leetcode.cn/problemset/",
+      "domain": "algorithm",
+      "type": "algorithm",
+      "learningFormat": "state_steps",
+      "explanationBlocks": [
+        "question",
+        "examples",
+        "think",
+        "hints",
+        "state_steps",
+        "explanation",
+        "reference_code",
+        "complexity",
+        "common_errors"
+      ]
+    },
+    {
+      "id": 88,
+      "title": "合并两个有序数组",
+      "sources": [
+        {
+          "kind": "official_link",
+          "url": "https://leetcode.cn/problemset/"
+        }
+      ],
+      "topic": "双指针",
+      "difficulty": "待核对",
+      "recommendedOrder": 1088,
+      "representative": false,
+      "variants": [],
+      "officialUrl": "https://leetcode.cn/problemset/",
+      "domain": "algorithm",
+      "type": "algorithm",
+      "learningFormat": "state_steps",
+      "explanationBlocks": [
+        "question",
+        "examples",
+        "think",
+        "hints",
+        "state_steps",
+        "explanation",
+        "reference_code",
+        "complexity",
+        "common_errors"
+      ]
+    },
+    {
+      "id": 94,
+      "title": "二叉树的中序遍历（简单）",
+      "sources": [
+        {
+          "kind": "official_link",
+          "url": "https://leetcode.cn/problemset/"
+        }
+      ],
+      "topic": "二叉树",
+      "difficulty": "待核对",
+      "recommendedOrder": 6094,
+      "representative": false,
+      "variants": [],
+      "officialUrl": "https://leetcode.cn/problemset/",
+      "domain": "algorithm",
+      "type": "algorithm",
+      "learningFormat": "state_steps",
+      "explanationBlocks": [
+        "question",
+        "examples",
+        "think",
+        "hints",
+        "state_steps",
+        "explanation",
+        "reference_code",
+        "complexity",
+        "common_errors"
+      ]
+    },
+    {
+      "id": 102,
+      "title": "二叉树的层序遍历（中等）",
+      "sources": [
+        {
+          "kind": "official_link",
+          "url": "https://leetcode.cn/problemset/"
+        }
+      ],
+      "topic": "二叉树",
+      "difficulty": "待核对",
+      "recommendedOrder": 6102,
+      "representative": false,
+      "variants": [],
+      "officialUrl": "https://leetcode.cn/problemset/",
+      "domain": "algorithm",
+      "type": "algorithm",
+      "learningFormat": "state_steps",
+      "explanationBlocks": [
+        "question",
+        "examples",
+        "think",
+        "hints",
+        "state_steps",
+        "explanation",
+        "reference_code",
+        "complexity",
+        "common_errors"
+      ]
+    },
+    {
+      "id": 104,
+      "title": "二叉树的最大深度（简单）",
+      "sources": [
+        {
+          "kind": "official_link",
+          "url": "https://leetcode.cn/problemset/"
+        }
+      ],
+      "topic": "二叉树",
+      "difficulty": "简单",
+      "recommendedOrder": 6104,
+      "representative": true,
+      "variants": [
+        94,
+        102,
+        226,
+        236
+      ],
+      "officialUrl": "https://leetcode.com/problems/maximum-depth-of-binary-tree/",
+      "domain": "algorithm",
+      "type": "algorithm_trace",
+      "learningFormat": "state_steps",
+      "explanationBlocks": [
+        "question",
+        "examples",
+        "think",
+        "hints",
+        "state_steps",
+        "explanation",
+        "reference_code",
+        "complexity",
+        "common_errors"
+      ],
+      "complete": true,
+      "status": "complete"
+    },
+    {
+      "id": 121,
+      "title": "买卖股票的最佳时机（简单）",
+      "sources": [
+        {
+          "kind": "official_link",
+          "url": "https://leetcode.cn/problemset/"
+        }
+      ],
+      "topic": "动态规划",
+      "difficulty": "简单",
+      "recommendedOrder": 8121,
+      "representative": false,
+      "variants": [],
+      "officialUrl": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/",
+      "domain": "algorithm",
+      "type": "algorithm_trace",
+      "learningFormat": "state_steps",
+      "explanationBlocks": [
+        "question",
+        "examples",
+        "think",
+        "hints",
+        "state_steps",
+        "explanation",
+        "reference_code",
+        "complexity",
+        "common_errors"
+      ],
+      "complete": true,
+      "status": "complete"
+    },
+    {
+      "id": 125,
+      "title": "验证回文串",
+      "sources": [
+        {
+          "kind": "official_link",
+          "url": "https://leetcode.cn/problemset/"
+        }
+      ],
+      "topic": "双指针",
+      "difficulty": "简单",
+      "recommendedOrder": 1125,
+      "representative": false,
+      "variants": [],
+      "officialUrl": "https://leetcode.com/problems/valid-palindrome/",
+      "domain": "algorithm",
+      "type": "algorithm_trace",
+      "learningFormat": "state_steps",
+      "explanationBlocks": [
+        "question",
+        "examples",
+        "think",
+        "hints",
+        "state_steps",
+        "explanation",
+        "reference_code",
+        "complexity",
+        "common_errors"
+      ],
+      "complete": true,
+      "status": "complete"
+    },
+    {
+      "id": 128,
+      "title": "最长连续序列（中等）",
+      "sources": [
+        {
+          "kind": "official_link",
+          "url": "https://leetcode.cn/problemset/"
+        }
+      ],
+      "topic": "数组与哈希",
+      "difficulty": "待核对",
+      "recommendedOrder": 128,
+      "representative": false,
+      "variants": [],
+      "officialUrl": "https://leetcode.cn/problemset/",
+      "domain": "algorithm",
+      "type": "algorithm",
+      "learningFormat": "state_steps",
+      "explanationBlocks": [
+        "question",
+        "examples",
+        "think",
+        "hints",
+        "state_steps",
+        "explanation",
+        "reference_code",
+        "complexity",
+        "common_errors"
+      ]
+    },
+    {
+      "id": 141,
+      "title": "环形链表（简单）",
+      "sources": [
+        {
+          "kind": "official_link",
+          "url": "https://leetcode.cn/problemset/"
+        }
+      ],
+      "topic": "链表",
+      "difficulty": "待核对",
+      "recommendedOrder": 5141,
+      "representative": false,
+      "variants": [],
+      "officialUrl": "https://leetcode.cn/problemset/",
+      "domain": "algorithm",
+      "type": "algorithm",
+      "learningFormat": "state_steps",
+      "explanationBlocks": [
+        "question",
+        "examples",
+        "think",
+        "hints",
+        "state_steps",
+        "explanation",
+        "reference_code",
+        "complexity",
+        "common_errors"
+      ]
+    },
+    {
+      "id": 146,
+      "title": "LRU 缓存（中等）",
+      "sources": [
+        {
+          "kind": "official_link",
+          "url": "https://leetcode.cn/problemset/"
+        }
+      ],
+      "topic": "链表",
+      "difficulty": "待核对",
+      "recommendedOrder": 5146,
+      "representative": false,
+      "variants": [],
+      "officialUrl": "https://leetcode.cn/problemset/",
+      "domain": "algorithm",
+      "type": "algorithm",
+      "learningFormat": "state_steps",
+      "explanationBlocks": [
+        "question",
+        "examples",
+        "think",
+        "hints",
+        "state_steps",
+        "explanation",
+        "reference_code",
+        "complexity",
+        "common_errors"
+      ]
+    },
+    {
+      "id": 152,
+      "title": "乘积最大子数组（中等）",
+      "sources": [
+        {
+          "kind": "official_link",
+          "url": "https://leetcode.cn/problemset/"
+        }
+      ],
+      "topic": "动态规划",
+      "difficulty": "待核对",
+      "recommendedOrder": 8152,
+      "representative": false,
+      "variants": [],
+      "officialUrl": "https://leetcode.cn/problemset/",
+      "domain": "algorithm",
+      "type": "algorithm",
+      "learningFormat": "state_steps",
+      "explanationBlocks": [
+        "question",
+        "examples",
+        "think",
+        "hints",
+        "state_steps",
+        "explanation",
+        "reference_code",
+        "complexity",
+        "common_errors"
+      ]
+    },
+    {
+      "id": 155,
+      "title": "最小栈（中等）",
+      "sources": [
+        {
+          "kind": "official_link",
+          "url": "https://leetcode.cn/problemset/"
+        }
+      ],
+      "topic": "栈",
+      "difficulty": "待核对",
+      "recommendedOrder": 3155,
+      "representative": false,
+      "variants": [],
+      "officialUrl": "https://leetcode.cn/problemset/",
+      "domain": "algorithm",
+      "type": "algorithm",
+      "learningFormat": "state_steps",
+      "explanationBlocks": [
+        "question",
+        "examples",
+        "think",
+        "hints",
+        "state_steps",
+        "explanation",
+        "reference_code",
+        "complexity",
+        "common_errors"
+      ]
+    },
+    {
+      "id": 167,
+      "title": "两数之和 II 输入有序数组",
+      "sources": [
+        {
+          "kind": "official_link",
+          "url": "https://leetcode.cn/problemset/"
+        }
+      ],
+      "topic": "双指针",
+      "difficulty": "中等",
+      "recommendedOrder": 1167,
+      "representative": false,
+      "variants": [],
+      "officialUrl": "https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/",
+      "domain": "algorithm",
+      "type": "algorithm_trace",
+      "learningFormat": "state_steps",
+      "explanationBlocks": [
+        "question",
+        "examples",
+        "think",
+        "hints",
+        "state_steps",
+        "explanation",
+        "reference_code",
+        "complexity",
+        "common_errors"
+      ],
+      "complete": true,
+      "status": "complete"
+    },
+    {
+      "id": 198,
+      "title": "打家劫舍（中等）",
+      "sources": [
+        {
+          "kind": "official_link",
+          "url": "https://leetcode.cn/problemset/"
+        }
+      ],
+      "topic": "动态规划",
+      "difficulty": "待核对",
+      "recommendedOrder": 8198,
+      "representative": false,
+      "variants": [],
+      "officialUrl": "https://leetcode.cn/problemset/",
+      "domain": "algorithm",
+      "type": "algorithm",
+      "learningFormat": "state_steps",
+      "explanationBlocks": [
+        "question",
+        "examples",
+        "think",
+        "hints",
+        "state_steps",
+        "explanation",
+        "reference_code",
+        "complexity",
+        "common_errors"
+      ]
+    },
+    {
+      "id": 200,
+      "title": "岛屿数量（中等）",
+      "sources": [
+        {
+          "kind": "official_link",
+          "url": "https://leetcode.cn/problemset/"
+        }
+      ],
+      "topic": "回溯与图",
+      "difficulty": "待核对",
+      "recommendedOrder": 7200,
+      "representative": false,
+      "variants": [],
+      "officialUrl": "https://leetcode.cn/problemset/",
+      "domain": "algorithm",
+      "type": "algorithm",
+      "learningFormat": "state_steps",
+      "explanationBlocks": [
+        "question",
+        "examples",
+        "think",
+        "hints",
+        "state_steps",
+        "explanation",
+        "reference_code",
+        "complexity",
+        "common_errors"
+      ]
+    },
+    {
+      "id": 206,
+      "title": "反转链表（简单）",
+      "sources": [
+        {
+          "kind": "official_link",
+          "url": "https://leetcode.cn/problemset/"
+        }
+      ],
+      "topic": "链表",
+      "difficulty": "简单",
+      "recommendedOrder": 5206,
+      "representative": true,
+      "variants": [
+        2,
+        21,
+        141,
+        146
+      ],
+      "officialUrl": "https://leetcode.com/problems/reverse-linked-list/",
+      "domain": "algorithm",
+      "type": "algorithm_trace",
+      "learningFormat": "state_steps",
+      "explanationBlocks": [
+        "question",
+        "examples",
+        "think",
+        "hints",
+        "state_steps",
+        "explanation",
+        "reference_code",
+        "complexity",
+        "common_errors"
+      ],
+      "complete": true,
+      "status": "complete"
+    },
+    {
+      "id": 215,
+      "title": "数组中的第 K 个最大元素（中等）",
+      "sources": [
+        {
+          "kind": "official_link",
+          "url": "https://leetcode.cn/problemset/"
+        }
+      ],
+      "topic": "二分与堆",
+      "difficulty": "待核对",
+      "recommendedOrder": 4215,
+      "representative": false,
+      "variants": [],
+      "officialUrl": "https://leetcode.cn/problemset/",
+      "domain": "algorithm",
+      "type": "algorithm",
+      "learningFormat": "state_steps",
+      "explanationBlocks": [
+        "question",
+        "examples",
+        "think",
+        "hints",
+        "state_steps",
+        "explanation",
+        "reference_code",
+        "complexity",
+        "common_errors"
+      ]
+    },
+    {
+      "id": 217,
+      "title": "存在重复元素",
+      "sources": [
+        {
+          "kind": "official_link",
+          "url": "https://leetcode.cn/problemset/"
+        }
+      ],
+      "topic": "数组与哈希",
+      "difficulty": "简单",
+      "recommendedOrder": 217,
+      "representative": false,
+      "variants": [],
+      "officialUrl": "https://leetcode.com/problems/contains-duplicate/",
+      "domain": "algorithm",
+      "type": "algorithm_trace",
+      "learningFormat": "state_steps",
+      "explanationBlocks": [
+        "question",
+        "examples",
+        "think",
+        "hints",
+        "state_steps",
+        "explanation",
+        "reference_code",
+        "complexity",
+        "common_errors"
+      ],
+      "complete": true,
+      "status": "complete"
+    },
+    {
+      "id": 219,
+      "title": "存在重复元素 II",
+      "sources": [
+        {
+          "kind": "official_link",
+          "url": "https://leetcode.cn/problemset/"
+        }
+      ],
+      "topic": "滑动窗口",
+      "difficulty": "简单",
+      "recommendedOrder": 2219,
+      "representative": false,
+      "variants": [],
+      "officialUrl": "https://leetcode.com/problems/contains-duplicate-ii/",
+      "domain": "algorithm",
+      "type": "algorithm_trace",
+      "learningFormat": "state_steps",
+      "explanationBlocks": [
+        "question",
+        "examples",
+        "think",
+        "hints",
+        "state_steps",
+        "explanation",
+        "reference_code",
+        "complexity",
+        "common_errors"
+      ],
+      "complete": true,
+      "status": "complete"
+    },
+    {
+      "id": 226,
+      "title": "翻转二叉树（简单）",
+      "sources": [
+        {
+          "kind": "official_link",
+          "url": "https://leetcode.cn/problemset/"
+        }
+      ],
+      "topic": "二叉树",
+      "difficulty": "待核对",
+      "recommendedOrder": 6226,
+      "representative": false,
+      "variants": [],
+      "officialUrl": "https://leetcode.cn/problemset/",
+      "domain": "algorithm",
+      "type": "algorithm",
+      "learningFormat": "state_steps",
+      "explanationBlocks": [
+        "question",
+        "examples",
+        "think",
+        "hints",
+        "state_steps",
+        "explanation",
+        "reference_code",
+        "complexity",
+        "common_errors"
+      ]
+    },
+    {
+      "id": 236,
+      "title": "二叉树的最近公共祖先（中等）",
+      "sources": [
+        {
+          "kind": "official_link",
+          "url": "https://leetcode.cn/problemset/"
+        }
+      ],
+      "topic": "二叉树",
+      "difficulty": "待核对",
+      "recommendedOrder": 6236,
+      "representative": false,
+      "variants": [],
+      "officialUrl": "https://leetcode.cn/problemset/",
+      "domain": "algorithm",
+      "type": "algorithm",
+      "learningFormat": "state_steps",
+      "explanationBlocks": [
+        "question",
+        "examples",
+        "think",
+        "hints",
+        "state_steps",
+        "explanation",
+        "reference_code",
+        "complexity",
+        "common_errors"
+      ]
+    },
+    {
+      "id": 283,
+      "title": "移动零",
+      "sources": [
+        {
+          "kind": "official_link",
+          "url": "https://leetcode.cn/problemset/"
+        }
+      ],
+      "topic": "双指针",
+      "difficulty": "简单",
+      "recommendedOrder": 1283,
+      "representative": true,
+      "variants": [
+        11,
+        15,
+        26,
+        27,
+        88,
+        125,
+        167
+      ],
+      "officialUrl": "https://leetcode.com/problems/move-zeroes/",
+      "domain": "algorithm",
+      "type": "algorithm_trace",
+      "learningFormat": "state_steps",
+      "explanationBlocks": [
+        "question",
+        "examples",
+        "think",
+        "hints",
+        "state_steps",
+        "explanation",
+        "reference_code",
+        "complexity",
+        "common_errors"
+      ],
+      "complete": true,
+      "status": "complete"
+    },
+    {
+      "id": 322,
+      "title": "零钱兑换（中等）",
+      "sources": [
+        {
+          "kind": "official_link",
+          "url": "https://leetcode.cn/problemset/"
+        }
+      ],
+      "topic": "动态规划",
+      "difficulty": "待核对",
+      "recommendedOrder": 8322,
+      "representative": false,
+      "variants": [],
+      "officialUrl": "https://leetcode.cn/problemset/",
+      "domain": "algorithm",
+      "type": "algorithm",
+      "learningFormat": "state_steps",
+      "explanationBlocks": [
+        "question",
+        "examples",
+        "think",
+        "hints",
+        "state_steps",
+        "explanation",
+        "reference_code",
+        "complexity",
+        "common_errors"
+      ]
+    },
+    {
+      "id": 704,
+      "title": "二分查找",
+      "topic": "二分与堆",
+      "sources": [
+        {
+          "kind": "official_link",
+          "url": "https://leetcode.com/problems/binary-search/"
+        }
+      ],
+      "representative": true,
+      "variants": [],
+      "recommendedOrder": 704,
+      "difficulty": "简单",
+      "domain": "algorithm",
+      "type": "algorithm_trace",
+      "learningFormat": "state_steps",
+      "officialUrl": "https://leetcode.com/problems/binary-search/",
+      "complete": true,
+      "status": "complete",
+      "explanationBlocks": [
+        "question",
+        "examples",
+        "think",
+        "hints",
+        "state_steps",
+        "explanation",
+        "reference_code",
+        "complexity",
+        "common_errors"
+      ]
+    },
+    {
+      "id": 994,
+      "title": "腐烂的橘子（中等）",
+      "sources": [
+        {
+          "kind": "official_link",
+          "url": "https://leetcode.cn/problemset/"
+        }
+      ],
+      "topic": "回溯与图",
+      "difficulty": "待核对",
+      "recommendedOrder": 7994,
+      "representative": false,
+      "variants": [],
+      "officialUrl": "https://leetcode.cn/problemset/",
+      "domain": "algorithm",
+      "type": "algorithm",
+      "learningFormat": "state_steps",
+      "explanationBlocks": [
+        "question",
+        "examples",
+        "think",
+        "hints",
+        "state_steps",
+        "explanation",
+        "reference_code",
+        "complexity",
+        "common_errors"
+      ]
+    },
+    {
+      "id": 1047,
+      "title": "删除字符串中的所有相邻重复项",
+      "sources": [
+        {
+          "kind": "official_link",
+          "url": "https://leetcode.cn/problemset/"
+        }
+      ],
+      "topic": "栈",
+      "difficulty": "待核对",
+      "recommendedOrder": 4047,
+      "representative": false,
+      "variants": [],
+      "officialUrl": "https://leetcode.cn/problemset/",
+      "domain": "algorithm",
+      "type": "algorithm",
+      "learningFormat": "state_steps",
+      "explanationBlocks": [
+        "question",
+        "examples",
+        "think",
+        "hints",
+        "state_steps",
+        "explanation",
+        "reference_code",
+        "complexity",
+        "common_errors"
+      ]
+    }
+  ],
+  "schemaVersion": 3,
+  "domainFormats": {
+    "algorithm": [
+      "question",
+      "state_steps",
+      "reference_code"
+    ],
+    "ai_application": [
+      "case",
+      "experiment",
+      "evaluation"
+    ],
+    "system_design": [
+      "constraints",
+      "tradeoffs",
+      "design_diagram"
+    ]
+  }
+}

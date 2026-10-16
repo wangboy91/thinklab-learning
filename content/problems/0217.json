@@ -1,0 +1,69 @@
+{
+  "title": "存在重复元素",
+  "concept": "集合 · 记住出现过的数字",
+  "time": "10 分钟",
+  "question": "给你一个整数数组。只要有一个数字出现在两个不同位置，就返回 true；每个数字都不同则返回 false。",
+  "think": "看到一个数字时，怎样立刻知道前面见过它没有？记录本需要保存位置，还是只保存数字就够？",
+  "hints": [
+    "先把每两个位置都比较，能找到重复，但会做很多重复工作。",
+    "每次只问：当前数字在之前出现的数字集合里吗？",
+    "先查集合，找到就返回 true；没找到才加入。走完没重复才返回 false。"
+  ],
+  "explain": "把集合想成“已经见过的数字”小盒子。读到1，盒子空，放入1；读到2、3，同样放入。再读到1，盒子已有1，证明另一个更早的位置有相同数字，直接返回 true。这里不需要知道早先位置的编号。",
+  "why": "集合始终只包含当前数字之前出现过的值。查到当前值就证明两个不同位置重复；查不到才放入。因此不漏重复，也不会把自己当成两个位置。",
+  "complexity": "平均时间 O(n)，额外空间 O(n)。n为数字个数，集合平均查询很快。动画为回放保存快照，不属于参考算法的空间开销。",
+  "errors": [
+    "把“数字相同”误认为“同一个位置”。",
+    "先加入再查：每次都能查到自己，会错误返回true。",
+    "读完直接返回true；无重复应返回false。"
+  ],
+  "exampleText": "[1,2,3,1] → true；[1,2,3,4] → false。",
+  "challenge": "[0,0]应返回什么？只有[1]时呢？先画出每步集合。",
+  "boardLabel": "当前数字与已见集合",
+  "trace": "duplicateTrace",
+  "examples": [
+    {
+      "label": "[1,2,3,1] · 有重复",
+      "nums": [
+        1,
+        2,
+        3,
+        1
+      ]
+    },
+    {
+      "label": "[1,2,3,4] · 无重复",
+      "nums": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "label": "[0,0] · 下标不同",
+      "nums": [
+        0,
+        0
+      ]
+    },
+    {
+      "label": "[-1,2,-1] · 负数",
+      "nums": [
+        -1,
+        2,
+        -1
+      ]
+    }
+  ],
+  "source": {
+    "kind": "original_authoring",
+    "officialUrl": "https://leetcode.com/problems/contains-duplicate/",
+    "license": "MIT for original teaching/code; third-party exercise rights excluded"
+  },
+  "id": 217,
+  "domain": "algorithm",
+  "type": "algorithm_trace",
+  "difficulty": "简单",
+  "topic": "数组与哈希"
+}

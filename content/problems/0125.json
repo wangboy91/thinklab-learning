@@ -1,0 +1,56 @@
+{
+  "title": "验证回文串",
+  "concept": "双指针 · 跳过无关字符",
+  "time": "15 分钟",
+  "question": "只比较ASCII英文字母和数字，忽略其他字符，英文字母不区分大小写。有效字符从前往后和从后往前读相同，就返回true。题目输入是可打印ASCII字符。",
+  "think": "不先复制一份“干净字符串”，能否直接从原串两端走过来？遇到空格和标点时应移动哪一端？",
+  "hints": [
+    "“回文”是左右对称；一对对比较两端有效字符。",
+    "左边不是字母数字就只移动左指针；右边无效就只移动右指针。",
+    "两边都有效后，转成小写比较；不同立刻false，相同则一起向内。相遇或交错时true。"
+  ],
+  "explain": "两个人从字符串两端向中间走。看到标点或空格就略过，看到有效字符才比较。例如a.,A：a和A都转成a，匹配后向内；中间标点被略过，最后相遇。无需整理出新字符串，所以额外记忆是固定大小。",
+  "why": "被跳过的字符按题意不参与比较；已经比较的有效字符对都相同。每次指针向内，下一对恰是剩余有效串的两端。只要有不同就不是回文，全部配对成功就是回文。",
+  "complexity": "时间 O(n)，额外空间 O(1)。两指针合计只向内移动，直接处理原串，不创建过滤后的长字符串；动画快照另计。",
+  "errors": [
+    "用过滤新串再称空间O(1)。",
+    "忘记忽略大小写，或把数字也跳过。",
+    "只使用某语言的Unicode字母判断，造成五语言含义不同；这里显式判断ASCII。"
+  ],
+  "exampleText": "“A man, a plan, a canal: Panama” → true；“race a car” → false；只有空格也为true。",
+  "challenge": "“0P”为什么false？“a.”为什么true？先预测哪一端跳过标点。",
+  "boardLabel": "原串左右指针 · 不复制过滤串",
+  "trace": "palindromeTrace",
+  "examples": [
+    {
+      "label": "a.,A · 跳过标点",
+      "s": "a.,A"
+    },
+    {
+      "label": "A man, a plan, a canal: Panama",
+      "s": "A man, a plan, a canal: Panama"
+    },
+    {
+      "label": "race a car · 不匹配",
+      "s": "race a car"
+    },
+    {
+      "label": "0P · 数字也参与",
+      "s": "0P"
+    },
+    {
+      "label": "空格 · 有效串为空",
+      "s": " "
+    }
+  ],
+  "source": {
+    "kind": "original_authoring",
+    "officialUrl": "https://leetcode.com/problems/valid-palindrome/",
+    "license": "MIT for original teaching/code; third-party exercise rights excluded"
+  },
+  "id": 125,
+  "domain": "algorithm",
+  "type": "algorithm_trace",
+  "difficulty": "简单",
+  "topic": "双指针"
+}

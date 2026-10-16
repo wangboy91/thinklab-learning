@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-13",
+  "newCompleteIds": [
+    217,
+    125,
+    283,
+    704,
+    35
+  ],
+  "existingCompleteIds": [
+    1,
+    20
+  ],
+  "catalogCount": 44,
+  "completeCount": 7,
+  "templates": {
+    "217": "seen-set",
+    "125": "original-string-ascii-two-pointers",
+    "283": "stable-overwrite-then-zero-fill",
+    "704": "closed-interval-binary-search",
+    "35": "closed-interval-search-then-return-left"
+  },
+  "verification": {
+    "traceOracleCases": 2987,
+    "referenceCasesPerLanguage": 57,
+    "runtimes": [
+      "C#/.NET8",
+      "Python3.11",
+      "Java21",
+      "JavaScript/Node22",
+      "TypeScript/Node-native-type-stripping"
+    ],
+    "typescriptFullTypeCheck": "not run; no tsc available",
+    "realChromeNewPages": [
+      217,
+      125,
+      283,
+      704,
+      35
+    ],
+    "chromeResult": "all rendered, no placeholders/errors; full trace/replay/reverse/play-stop and 5 languages verified read-only",
+    "physicalPhone": "not verified"
+  },
+  "publication": "local uncommitted; no push",
+  "rights": "original teaching/code MIT; third-party exercises excluded"
+}

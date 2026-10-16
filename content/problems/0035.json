@@ -1,0 +1,76 @@
+{
+  "title": "搜索插入位置",
+  "concept": "二分查找 · 缺失时返回left",
+  "time": "15 分钟",
+  "question": "数组升序且数字互不相同。target存在时返回下标；不存在时，返回插入后仍保持升序的位置。这里沿用闭区间、相等立即返回的二分模板。",
+  "think": "用二分查找找不到目标时，左右指针最终停在哪里？left左边的数字和目标有什么关系？",
+  "hints": [
+    "与704一样，用闭区间[0,n-1]和left<=right。相等立刻返回mid。",
+    "中间值太小就left=mid+1，太大就right=mid-1。",
+    "没找到且范围为空时返回left，而不是-1；left可以等于n，代表尾插，不读取nums[n]。"
+  ],
+  "explain": "[1,3,5,6]找2：范围[0,3]，mid=1的3太大，右边界变0；再看位置0的1太小，左边界变1。此时[1,0]是空区间。位置1前的数都比2小，位置1起的数都比2大，因此返回1。找7时最终left=4，合法表示放在末尾。",
+  "why": "循环中，所有下标小于left的数都小于target，所有下标大于right的数都大于target；相等时直接返回。未命中时left=right+1，两侧已经分类，left就是保持顺序的插入位置。",
+  "complexity": "时间 O(log n)，额外空间 O(1)。与704共用闭区间缩小逻辑，但缺失时返回left；动画快照另计。",
+  "errors": [
+    "照搬704在缺失时返回-1。",
+    "尾插位置n是答案，不是可读取的下标。",
+    "混用半开区间模板的边界和本页闭区间条件。"
+  ],
+  "exampleText": "[1,3,5,6]找5 → 2；找2 → 1；找7 → 4；找0 → 0。",
+  "challenge": "[1,3]找2应插到哪里？空数组的函数健壮性补测应返回0。",
+  "boardLabel": "闭区间查找 · 空区间返回left",
+  "trace": "searchInsertTrace",
+  "examples": [
+    {
+      "label": "[1,3,5,6]找2 · 中间插入",
+      "nums": [
+        1,
+        3,
+        5,
+        6
+      ],
+      "target": 2
+    },
+    {
+      "label": "找5 · 已存在",
+      "nums": [
+        1,
+        3,
+        5,
+        6
+      ],
+      "target": 5
+    },
+    {
+      "label": "找7 · 尾插n",
+      "nums": [
+        1,
+        3,
+        5,
+        6
+      ],
+      "target": 7
+    },
+    {
+      "label": "找0 · 首插",
+      "nums": [
+        1,
+        3,
+        5,
+        6
+      ],
+      "target": 0
+    }
+  ],
+  "source": {
+    "kind": "original_authoring",
+    "officialUrl": "https://leetcode.com/problems/search-insert-position/",
+    "license": "MIT for original teaching/code; third-party exercise rights excluded"
+  },
+  "id": 35,
+  "domain": "algorithm",
+  "type": "algorithm_trace",
+  "difficulty": "简单",
+  "topic": "二分与堆"
+}

@@ -1,0 +1,201 @@
+{
+  "date": "2026-10-13",
+  "scope": "daily-exact-five",
+  "newCompleteIds": [
+    3,
+    167,
+    219,
+    206,
+    104
+  ],
+  "allCompleteIds": [
+    1,
+    3,
+    20,
+    26,
+    35,
+    104,
+    121,
+    125,
+    167,
+    206,
+    217,
+    219,
+    283,
+    704
+  ],
+  "allCompleteCount": 14,
+  "catalogCount": 44,
+  "routeIdsUnchanged": true,
+  "routes": [
+    {
+      "id": "thinking-basics",
+      "ids": [
+        1,
+        20,
+        217,
+        283,
+        121,
+        26
+      ],
+      "completeIds": [
+        1,
+        20,
+        217,
+        283,
+        121,
+        26
+      ],
+      "pendingIds": []
+    },
+    {
+      "id": "core-methods",
+      "ids": [
+        1,
+        283,
+        3,
+        20,
+        704,
+        35,
+        33,
+        206,
+        104,
+        46,
+        70
+      ],
+      "completeIds": [
+        1,
+        283,
+        3,
+        20,
+        704,
+        35,
+        206,
+        104
+      ],
+      "pendingIds": [
+        33,
+        46,
+        70
+      ]
+    },
+    {
+      "id": "array-toolkit",
+      "ids": [
+        1,
+        217,
+        283,
+        26,
+        125,
+        167,
+        11,
+        3,
+        219
+      ],
+      "completeIds": [
+        1,
+        217,
+        283,
+        26,
+        125,
+        167,
+        3,
+        219
+      ],
+      "pendingIds": [
+        11
+      ]
+    },
+    {
+      "id": "structures-basics",
+      "ids": [
+        20,
+        155,
+        21,
+        206,
+        141,
+        94,
+        102,
+        104,
+        226
+      ],
+      "completeIds": [
+        20,
+        206,
+        104
+      ],
+      "pendingIds": [
+        155,
+        21,
+        141,
+        94,
+        102,
+        226
+      ]
+    }
+  ],
+  "officialVerification": {
+    "date": "2026-10-13",
+    "urls": {
+      "3": "https://leetcode.com/problems/longest-substring-without-repeating-characters/",
+      "167": "https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/",
+      "219": "https://leetcode.com/problems/contains-duplicate-ii/",
+      "206": "https://leetcode.com/problems/reverse-linked-list/",
+      "104": "https://leetcode.com/problems/maximum-depth-of-binary-tree/"
+    }
+  },
+  "verification": {
+    "newIndependentOracleChecks": 2546,
+    "newReferenceCasesPerLanguage": 44,
+    "previousOracleChecksRetained": 4716,
+    "previousReferenceCasesPerLanguage": 75,
+    "languagesExecuted": [
+      "C# .NET8",
+      "Python3.11",
+      "Java21",
+      "JavaScript Node22",
+      "TypeScript Node native stripping"
+    ],
+    "tscFullCheck": "not run; native stripping only",
+    "fullRunChecks": "passed",
+    "productionRecordsUnchanged": {
+      "progress": true,
+      "plan_items": true,
+      "imports": true,
+      "operations": true,
+      "route_operations": true,
+      "meta": true
+    },
+    "liveReadOnly": "11 resources match bytes; APIs healthy; private paths404; unauthorized write403",
+    "physicalPhone": "not verified",
+    "realChrome": {
+      "pages": [
+        3,
+        167,
+        219,
+        206,
+        104
+      ],
+      "examplesTraversed": 22,
+      "reverseReplayRepeatedPlayPauseFiveLanguagesTimerCancellation": "passed",
+      "physicalPhone": "not verified",
+      "mobileWidths": [
+        320,
+        390,
+        430
+      ],
+      "mobileAllDetailsOpened": true,
+      "mobilePageOverflow": 0,
+      "visibleTouchTargetsMinPx": 44,
+      "bodyFontPx": 17,
+      "codeHorizontalScroll": "independent auto",
+      "productionReadOnly": true,
+      "screenshots": "not captured; real rendered DOM measurements",
+      "isolatedProgressSaveRefresh": "passed; marker persisted through actual iframe navigation/reload; test-only SQLite"
+    },
+    "originalArchiveHashReferencesChecked": 296,
+    "originalArchiveHashMismatches": 0
+  },
+  "publication": "local source and generated dist; no commit or push",
+  "lanUrl": "http://192.168.0.200:8791/"
+}

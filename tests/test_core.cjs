@@ -1,0 +1,41 @@
+const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm');
+const {twoSumTrace,bracketsTrace}=require('../dist/algorithms');
+function brute(a,t){for(let i=0;i<a.length;i++)for(let j=i+1;j<a.length;j++)if(a[i]+a[j]===t)return [i,j];return []}
+const twoCases=[[[3,2,4],6],[[3,3],6],[[0,4,3,0],0],[[4,1,6,8],10],[[-3,4,3,90],0]];
+for(const [a,t] of twoCases){const trace=twoSumTrace(a,t);assert.deepEqual(trace.at(-1).result,brute(a,t));for(const s of trace){for(const [v,i] of s.map){assert.equal(a[i],v);assert.ok(i<=s.i)}if(s.result?.length){assert.notEqual(...s.result);assert.equal(a[s.result[0]]+a[s.result[1]],t)}}}
+assert.deepEqual(twoSumTrace([3,2,4],6).at(-1).map,[[3,0],[2,1]]);
+const bad=bracketsTrace('([)]');assert.equal(bad.at(-1).i,2);assert.deepEqual(bad.at(-1).stack,['(','[']);assert.equal(bad.at(-1).result,false);
+function oracle(s){let prev;do{prev=s;s=s.replace(/\(\)|\[\]|\{\}/g,'')}while(s!==prev);return s===''}
+let count=0;function check(s,depth){assert.equal(bracketsTrace(s).at(-1).result,oracle(s),s);count++;if(depth)for(const c of '()[]{}')check(s+c,depth-1)}check('',5);
+const codeContext={window:{}};vm.runInNewContext(fs.readFileSync('dist/codes.js','utf8'),codeContext);const codes=codeContext.window.CODES;
+for(const [a,t] of twoCases)assert.deepEqual(JSON.parse(JSON.stringify(vm.runInNewContext(codes[1]['JavaScript（Node.js）']+`;twoSum(${JSON.stringify(a)},${t})`))),brute(a,t));
+for(const s of ['([])','([)]',')','(()','','()[]{}'])assert.equal(vm.runInNewContext(codes[20]['JavaScript（Node.js）']+`;isValid(${JSON.stringify(s)})`),oracle(s));
+// Execute actual UI handlers with a lightweight DOM and controlled clock.
+const elements={},listeners={},local={},timers=new Map();let serial=0;
+function element(id){return elements[id]??=( {id,textContent:'',innerHTML:'',value:id==='language'?'C#':'0',style:{},dataset:{},open:false,insertAdjacentHTML(){}})}
+const ctx={window:{CONTENT:null,CODES:codes,addEventListener:(n,f)=>listeners[n]=f,scrollTo(){}},document:{getElementById:element,querySelectorAll:()=>[],addEventListener:(n,f)=>listeners[n]=f},location:{hash:'#/problem/1'},localStorage:{getItem:k=>local[k]||null,setItem:(k,v)=>local[k]=v},navigator:{clipboard:{writeText:async()=>{}}},setInterval:f=>{const id=++serial;timers.set(id,f);return id},clearInterval:id=>timers.delete(id),alert(){},Date,Algorithms:{twoSumTrace,bracketsTrace}};
+ctx.window.window=ctx.window;vm.createContext(ctx);vm.runInContext(fs.readFileSync('dist/content.js','utf8'),ctx);ctx.CONTENT=ctx.window.CONTENT;ctx.CODES=codes;ctx.window.CODES=codes;ctx.window.Algorithms=ctx.Algorithms;vm.runInContext(fs.readFileSync('dist/lessons.js','utf8'),ctx);vm.runInContext(fs.readFileSync('dist/algorithms-extra.js','utf8'),ctx);vm.runInContext(fs.readFileSync('dist/routes.js','utf8'),ctx);vm.runInContext(fs.readFileSync('dist/app.js','utf8'),ctx);
+element('next').onclick();assert.match(element('step-count').textContent,/第 2/);element('prev').onclick();assert.match(element('step-count').textContent,/第 1/);
+for(let i=0;i<10;i++){element('play').onclick();assert.equal(timers.size,1);element('play').onclick();assert.equal(timers.size,0)}
+element('play').onclick();for(const f of [...timers.values()])f();assert.match(element('step-count').textContent,/第 2/);element('replay').onclick();assert.equal(timers.size,0);assert.match(element('step-count').textContent,/第 1/);
+element('play').onclick();ctx.location.hash='#/problem/20';listeners.hashchange();assert.equal(timers.size,0);assert.match(element('step-count').textContent,/第 1/);
+element('example').value='1';element('example').onchange();while(!element('next').disabled)element('next').onclick();assert.match(element('step-count').textContent,/false/);element('prev').onclick();assert.equal(element('next').disabled,false);
+element('done').onclick();assert.ok(Object.values(JSON.parse(local['slow-think-v1']))[0].done.includes(20));vm.runInContext("records=JSON.parse(localStorage.getItem('slow-think-v1'));render()",ctx);assert.match(element('done').textContent,/取消/);element('language').value='Python';element('language').onchange();assert.equal(element('code').textContent,codes[20].Python);
+vm.runInContext("records[day()]={list:[101,102,103,104,105],done:[]};add(1)",ctx);assert.equal(vm.runInContext('today().list.length',ctx),6);
+const homeHTML=vm.runInContext('home()',ctx),lessonHTML=vm.runInContext('lesson(1)',ctx);
+assert.ok(!homeHTML.includes('class="hero"'));assert.ok(!homeHTML.includes('待制作'));assert.ok(homeHTML.includes('学习路线'));assert.ok(homeHTML.includes('id="search"'));
+assert.ok(lessonHTML.indexOf('题目</h2>')<lessonHTML.indexOf('例子</strong>'));assert.ok(lessonHTML.indexOf('例子</strong>')<lessonHTML.indexOf('先想一想</h2>'));assert.ok(lessonHTML.indexOf('先想一想</h2>')<lessonHTML.indexOf('id="walkthrough"'));
+for(const id of ['example','tokens','state','prev','play','next','replay','language','copy','code','done'])assert.ok(lessonHTML.includes(`id="${id}"`),id);
+for(const heading of ['解题思路与复杂度','参考代码','常见错误与自己验算','题目链接'])assert.ok(lessonHTML.includes(heading),heading);
+assert.equal((lessonHTML.match(/<option>/g)||[]).length,5);
+vm.runInContext("records={'2000-1-1':{list:[1],done:[1]}};view='library'",ctx);assert.ok(vm.runInContext('home()',ctx).includes('1 题已理解'));
+vm.runInContext("view='route'",ctx);const routesHTML=vm.runInContext('home()',ctx);for(const r of ctx.window.ROUTES)assert.ok(routesHTML.includes(r.title));assert.ok(routesHTML.includes('data-join-route'));vm.runInContext("selectedRouteId='thinking-basics'",ctx);assert.ok(vm.runInContext('routePage()',ctx).includes('route-ordered'));
+
+fs.mkdirSync('test-runners',{recursive:true});
+fs.writeFileSync('test-runners/test.py',codes[1].Python+'\n'+codes[20].Python+`\nassert two_sum([3,2,4],6)==[1,2]\nassert two_sum([3,3],6)==[0,1]\nassert two_sum([0,4,3,0],0)==[0,3]\nfor text,expected in [('([])',True),('([)]',False),(')',False),('(()',False),('',True),('()[]{}',True)]:\n    assert is_valid(text)==expected\nprint('Python: 9 checks passed')\n`);
+fs.mkdirSync('test-runners/csharp',{recursive:true});fs.writeFileSync('test-runners/csharp/Tests.csproj','<Project Sdk="Microsoft.NET.Sdk"><PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net8.0</TargetFramework></PropertyGroup></Project>');
+fs.writeFileSync('test-runners/csharp/Program.cs',codes[1]['C#'].replace('class Solution','class SumSolution')+'\n'+codes[20]['C#'].replace('using System.Collections.Generic;','').replace('class Solution','class BracketSolution')+`\nclass Program { static void Main() { var a=new SumSolution(); var b=new BracketSolution(); void Check(bool ok){if(!ok)throw new Exception("Failed");} Check(string.Join(",",a.TwoSum(new[]{3,2,4},6))=="1,2"); Check(string.Join(",",a.TwoSum(new[]{3,3},6))=="0,1"); Check(string.Join(",",a.TwoSum(new[]{0,4,3,0},0))=="0,3"); Check(b.IsValid("([])")); Check(!b.IsValid("([)]")); Check(!b.IsValid(")")); Check(!b.IsValid("(()")); Check(b.IsValid("")); Check(b.IsValid("()[]{}")); Console.WriteLine("C#: 9 checks passed"); } }`);
+fs.writeFileSync('test-runners/RunTests.java',codes[1].Java.replace('class Solution','class SumSolution')+'\n'+codes[20].Java.replace(/import [^;]+;/g,'').replace('class Solution','class BracketSolution')+`\npublic class RunTests { public static void main(String[] args) { var a=new SumSolution(); var b=new BracketSolution(); if(!java.util.Arrays.equals(a.twoSum(new int[]{3,2,4},6),new int[]{1,2}) || !java.util.Arrays.equals(a.twoSum(new int[]{3,3},6),new int[]{0,1}) || !java.util.Arrays.equals(a.twoSum(new int[]{0,4,3,0},0),new int[]{0,3}) || !b.isValid("([])") || b.isValid("([)]") || b.isValid(")") || b.isValid("(()") || !b.isValid("") || !b.isValid("()[]{}")) throw new RuntimeException("Failed"); System.out.println("Java: 9 checks passed"); }}\n`.replace(/^/,''));
+// Put all Java imports before classes.
+let java=fs.readFileSync('test-runners/RunTests.java','utf8');fs.writeFileSync('test-runners/RunTests.java','import java.util.ArrayDeque;\nimport java.util.Deque;\n'+java);
+console.log(`PASS: ${count} bracket inputs, 5 sum examples, JavaScript references, UI handler pause/step/back/replay/switch/refresh/limit/language checks. Browser rendering not tested.`);

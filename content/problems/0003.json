@@ -1,0 +1,57 @@
+{
+  "title": "无重复字符的最长子串",
+  "difficulty": "中等",
+  "topic": "滑动窗口",
+  "concept": "窗口 · 左端逐个缩小",
+  "time": "20 分钟",
+  "question": "在字符串中找一段连续的字符，要求里面没有相同字符，返回这样的连续片段最长有多少个字符。本页按题目的英文字母、数字、符号和空格处理，不忽略空格。",
+  "think": "右端准备加入一个已经在窗口里的字符时，必须清空整个窗口吗？能不能只从左边删到不重复为止？",
+  "hints": [
+    "先枚举每个起点，不断向后看，遇到重复停止；用它验证小例子。",
+    "用集合记录当前窗口字符。右端新字符若已在集合，就移除左端字符并让左端前进。",
+    "直到新字符不重复，再加入它，用right-left+1更新最大长度。左端只前进，不退回。"
+  ],
+  "explain": "看abba：先加入a、b，最佳长度2。第二个b来了，先移出左边a，再移出原来的b，窗口清空后才加入新b；最后a可以加入，窗口是ba，长度2。看dvdf时只移出第一个d，保留v，最后能得到vdf的3。每帧分开显示集合删除、左端前进、加入和更新长度。",
+  "why": "加入右端前，旧窗口没有重复。逐个移出左端直到新字符不在集合，加入后仍无重复，且保留尽可能长的合法后缀。每个右端都记录了对应最大合法窗口，因此最佳长度覆盖所有连续片段。",
+  "complexity": "平均时间O(n)，每个字符最多加入和移出一次；额外空间O(min(n,字符种类数))。动画快照和演示字符数组另计，不能把它们算成参考算法空间。",
+  "errors": [
+    "重复时清空整个窗口，可能丢掉还能保留的后缀。",
+    "漏掉空格/符号，改变题意。",
+    "把不连续的字符子序列当答案，或左端往回移动。"
+  ],
+  "exampleText": "abcabcbb → 3；bbbbb → 1；pwwkew → 3，合法连续片段如wke。",
+  "challenge": "abba为什么是2？dvdf为何能得到3？一个空格算不算字符？",
+  "boardLabel": "连续窗口 · 当前字符集合 · 最佳长度",
+  "trace": "longestWindowTrace",
+  "examples": [
+    {
+      "label": "abba · 防过度清空",
+      "s": "abba"
+    },
+    {
+      "label": "abcabcbb · 最长3",
+      "s": "abcabcbb"
+    },
+    {
+      "label": "dvdf · 保留后缀",
+      "s": "dvdf"
+    },
+    {
+      "label": "pwwkew · 必须连续",
+      "s": "pwwkew"
+    },
+    {
+      "label": "空字符串",
+      "s": ""
+    }
+  ],
+  "id": 3,
+  "domain": "algorithm",
+  "type": "algorithm_trace",
+  "source": {
+    "kind": "original_authoring",
+    "officialUrl": "https://leetcode.com/problems/longest-substring-without-repeating-characters/",
+    "officialVerifiedDate": "2026-10-13",
+    "license": "MIT for original teaching/code; third-party exercise rights excluded"
+  }
+}

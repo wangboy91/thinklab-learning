@@ -1,0 +1,15 @@
+{
+  "day": "2026-10-14",
+  "recommendedIds": [
+    206,
+    21
+  ],
+  "reusedCompleteIds": [
+    206
+  ],
+  "newCompleteIds": [
+    21
+  ],
+  "planPolicy": "Append once by day/problem; preserve existing order/revisions/done; do not mark complete",
+  "officialNetworkVerification": "Not performed: user prohibited public network"
+}

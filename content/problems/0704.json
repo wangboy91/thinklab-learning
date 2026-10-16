@@ -1,0 +1,75 @@
+{
+  "title": "二分查找",
+  "concept": "有序数组 · 排除一半",
+  "time": "15 分钟",
+  "question": "整数数组已经按升序排列且数字互不相同。找到target就返回下标；不存在返回-1。用二分查找缩小候选范围。",
+  "think": "翻一本按编号排好顺序的书，如果中间编号比目标小，可以同时排除哪一半？未排序数组为什么不能这样找？",
+  "hints": [
+    "先确认数组有序；否则中间数字无法说明左右两边大小。",
+    "用闭区间[left,right]表示还可能找到目标的下标，初始为[0,n-1]。",
+    "取mid；相等返回mid，小于目标时left=mid+1，大于时right=mid-1。left>right就找不到。"
+  ],
+  "explain": "像猜有序卡片上的数字。[-1,0,3,5,9,12]找9：先看中间位置2的3，3太小，连同左边都排除；范围变成[3,5]。再看位置4的9，直接返回4。每次排除的部分都有大小关系证据，不能用于乱序数组。",
+  "why": "如果目标存在，它一定还在[left,right]中。中间值小于目标时，所有下标不大于mid的值都太小；大于时右侧都太大。排除mid并保留另一侧维持这个条件，空区间表示无解。",
+  "complexity": "时间 O(log n)，额外空间 O(1)。每轮候选数大约减半，只保存几个下标；动画快照另计。",
+  "errors": [
+    "右边界n-1与循环left<=right不配套。",
+    "边界写成mid，可能不缩小并无限循环。",
+    "把返回下标0当成false，或终态空区间还画成有候选。"
+  ],
+  "exampleText": "[-1,0,3,5,9,12]，target=9 → 4；target=2 → -1。",
+  "challenge": "只有[5]时分别找5、4；[1,3]找末尾3。中点必须向下取整。",
+  "boardLabel": "闭区间候选范围 [left,right]",
+  "trace": "binarySearchTrace",
+  "examples": [
+    {
+      "label": "找9 · 命中",
+      "nums": [
+        -1,
+        0,
+        3,
+        5,
+        9,
+        12
+      ],
+      "target": 9
+    },
+    {
+      "label": "找2 · 缺失",
+      "nums": [
+        -1,
+        0,
+        3,
+        5,
+        9,
+        12
+      ],
+      "target": 2
+    },
+    {
+      "label": "[5]找5 · 单元素",
+      "nums": [
+        5
+      ],
+      "target": 5
+    },
+    {
+      "label": "[1,3]找3 · 末尾",
+      "nums": [
+        1,
+        3
+      ],
+      "target": 3
+    }
+  ],
+  "source": {
+    "kind": "original_authoring",
+    "officialUrl": "https://leetcode.com/problems/binary-search/",
+    "license": "MIT for original teaching/code; third-party exercise rights excluded"
+  },
+  "id": 704,
+  "domain": "algorithm",
+  "type": "algorithm_trace",
+  "difficulty": "简单",
+  "topic": "二分与堆"
+}

@@ -1,3 +1,4 @@
-import argparse
-from storage import SQLiteProgressStore
-p=argparse.ArgumentParser();p.add_argument('destination');p.add_argument('--database',default='data/learning.sqlite3');a=p.parse_args();SQLiteProgressStore(a.database).backup(a.destination);print('SQLite backup complete')
+# Transitional backup command.
+import runpy
+from pathlib import Path
+runpy.run_path(str(Path(__file__).parent/'scripts/backup_progress.py'),run_name='__main__')

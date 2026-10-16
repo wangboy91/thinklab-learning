@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "batchId": "example-preflight",
+  "day": "2030-1-2",
+  "items": [
+    {
+      "id": 1,
+      "sha256": "95a48f4d5f34484dc36d5b0ddb2ec0fa7b468d4b8f8669fc5067e505019e86cb"
+    },
+    {
+      "id": 167,
+      "sha256": "b96fd73a2da823d4f8bbe25387a504aa3914412cfcc58a1bf96bbb7d558852a0"
+    }
+  ]
+}

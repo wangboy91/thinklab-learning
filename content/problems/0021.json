@@ -1,0 +1,89 @@
+{
+  "id": 21,
+  "title": "合并两个有序链表",
+  "difficulty": "简单",
+  "topic": "链表",
+  "concept": "比较两头 · 复用节点 · 尾指针",
+  "time": "20 分钟",
+  "domain": "algorithm",
+  "type": "algorithm_trace",
+  "question": "给定两个各自按非递减顺序排列的单向链表，将它们的原节点接成一个有序链表并返回头节点。输入链表互不共享节点且无环；空链表用null表示。不要只把值复制到新数组。",
+  "think": "两条链的最小值一定在哪里？接上一个节点后，怎样同时保留剩余链表的入口和结果的尾部？",
+  "hints": [
+    "比较两个当前头节点，较小者必是所有剩余节点中的最小值。相等时选择第一条链，保留两条链各自的相对顺序。",
+    "用哨兵dummy避免单独处理第一次连接。tail指向结果末端，先令tail.next指向选中的节点，再移动对应输入头。",
+    "让tail前进到刚接上的节点。一条链为空后，直接接上另一条完整后缀，最后返回dummy.next。"
+  ],
+  "explain": "例子A:1→2→4、B:1→3→4。依次选择A0、B0、A1、B1、A2；A耗尽，把B2后缀接到tail。结果1→1→2→3→4→4。输入游标保留未处理部分；tail.next每次更新的是实际节点边。动画在连接与移动之间展示真实状态，临时尾边可能仍指向未处理后缀，因此已选择序列与从dummy遍历的整条链分别展示。",
+  "why": "循环前，已选择前缀有序且包含已经移出的全部节点，输入头分别指向各自剩余有序后缀。两头较小者不大于任何剩余节点，接入后仍保持有序；移动该输入头和tail恢复不变式。每轮剩余节点数减少一，循环终止后另一个后缀本身有序且不小于已选尾部，整体接上即正确。哨兵不属于答案，每个原节点恰好出现一次。",
+  "complexity": "时间O(m+n)，最坏遍历两链节点；额外空间O(1)，只增加一个哨兵和少量引用，复用原节点。动画保存图和快照的空间单独计算，不是参考算法的额外空间。",
+  "errors": [
+    "忘记移动选中的输入头或tail，可能死循环或覆盖已接节点。",
+    "返回dummy而不是dummy.next，把哨兵当成答案。",
+    "把两个头值相同理解成同一节点，遗漏重复值；复制值也无法证明复用了节点。",
+    "两输入共享尾部会造成环，不属于本题输入约束；复用节点会改变原链的next，不能期待原链结构保持不变。"
+  ],
+  "exampleText": "1→2→4 与 1→3→4 合并为1→1→2→3→4→4。两个空链表返回null；一条为空直接返回另一条头。",
+  "challenge": "两条链都是2→2时，哪四个节点ID会按什么顺序出现？一条链先耗尽时为什么不必继续逐个比较？",
+  "boardLabel": "两条输入 · 哨兵next · 实际节点边",
+  "trace": "mergeListTrace",
+  "codeNote": "五语言参考自写ListNode供独立运行；力扣已提供节点类时省略定义。算法会重接原节点，输入链不共享节点。动画a/b数组仅创建演示链。",
+  "examples": [
+    {
+      "label": "1→2→4 与 1→3→4",
+      "a": [
+        1,
+        2,
+        4
+      ],
+      "b": [
+        1,
+        3,
+        4
+      ]
+    },
+    {
+      "label": "两条空链",
+      "a": [],
+      "b": []
+    },
+    {
+      "label": "空链与0",
+      "a": [],
+      "b": [
+        0
+      ]
+    },
+    {
+      "label": "相同值，不同节点",
+      "a": [
+        2,
+        2
+      ],
+      "b": [
+        2,
+        2
+      ]
+    },
+    {
+      "label": "负数与后缀",
+      "a": [
+        -5,
+        -1,
+        3
+      ],
+      "b": [
+        -4,
+        0,
+        2,
+        7
+      ]
+    }
+  ],
+  "source": {
+    "kind": "original_authoring",
+    "officialUrl": "https://leetcode.com/problems/merge-two-sorted-lists/",
+    "license": "MIT for original teaching/code; third-party exercise rights excluded",
+    "verificationNote": "Official exercise permalink specified for this original lesson; not fetched in this batch because public network access was prohibited."
+  }
+}

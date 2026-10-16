@@ -1,0 +1,22 @@
+{
+  "day": "2026-10-15",
+  "recommendedIds": [
+    1,
+    167
+  ],
+  "reusedCompleteIds": [
+    1,
+    167
+  ],
+  "newCompleteIds": [],
+  "planResult": {
+    "added": [
+      167
+    ],
+    "already": [
+      1
+    ]
+  },
+  "validationReport": "local/DAILY-20261015-REPORT.json",
+  "policy": "Idempotent day/problem merge; preserve all previous learning state; never mark complete"
+}

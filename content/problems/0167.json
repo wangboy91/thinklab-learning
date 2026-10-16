@@ -1,0 +1,73 @@
+{
+  "title": "两数之和II：输入有序数组",
+  "difficulty": "中等",
+  "topic": "双指针",
+  "concept": "有序两端 · 返回1起编号",
+  "time": "15 分钟",
+  "question": "数组已经非降序排列，保证有唯一一对不同位置的数字相加为target。用常数额外空间找它们，返回从1开始的编号；不能重复用同一个元素。动画内部下标仍从0开始。",
+  "think": "固定左端，若与当前最大右端相加还太小，左端还有可能与其他更小数字凑够吗？",
+  "hints": [
+    "先从数组两端各取一个数。有序关系让一次比较能排除一个端点。",
+    "和太小就左端右移；和太大就右端左移。相等时找到了。",
+    "循环left<right避免同位置使用；输出是[left+1,right+1]。无需哈希表。"
+  ],
+  "explain": "[2,3,4]找6：两端2和4之和就是6，内部下标0和2，返回编号[1,3]。[2,7,11,15]找9：2+15太大，去掉右端15；2+11还太大，再去掉11；2+7等于9，返回[1,2]。两端的移动根据有序性决定，不是任意试数。",
+  "why": "和太小时，固定当前左端，任何更靠左的右端数都不会更大，均不可能达到目标，所以可排除左端。和太大时同理排除右端。只排除不可能参与答案的端点，保留唯一正确的一对。",
+  "complexity": "时间O(n)，两端各只向内移动；额外空间O(1)。题目要求常数空间，所以不使用1题的哈希表。动画保存快照另计。",
+  "errors": [
+    "输出0起下标，本题需要1起编号。",
+    "和太小却移动右端，或太大移动左端。",
+    "用left<=right可能配同一个位置；没有利用或确认有序前提。"
+  ],
+  "exampleText": "[2,7,11,15]/9 → [1,2]；[2,3,4]/6 → [1,3]；[-1,0]/-1 → [1,2]。",
+  "challenge": "[2,2]找4可以用两个2吗？“编号”与“内部下标”分别是多少？",
+  "boardLabel": "有序两端配对 · 内部下标与1起编号",
+  "trace": "sortedPairTrace",
+  "codeNote": "Python/JavaScript/TypeScript使用独立函数two_sum_sorted/twoSumSorted区分第1题；提交平台时按平台模板改函数名，算法不变。",
+  "examples": [
+    {
+      "label": "[2,7,11,15]找9",
+      "nums": [
+        2,
+        7,
+        11,
+        15
+      ],
+      "target": 9
+    },
+    {
+      "label": "[2,3,4]找6",
+      "nums": [
+        2,
+        3,
+        4
+      ],
+      "target": 6
+    },
+    {
+      "label": "[-1,0]找-1",
+      "nums": [
+        -1,
+        0
+      ],
+      "target": -1
+    },
+    {
+      "label": "[2,2]找4 · 不同位置",
+      "nums": [
+        2,
+        2
+      ],
+      "target": 4
+    }
+  ],
+  "id": 167,
+  "domain": "algorithm",
+  "type": "algorithm_trace",
+  "source": {
+    "kind": "original_authoring",
+    "officialUrl": "https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/",
+    "officialVerifiedDate": "2026-10-13",
+    "license": "MIT for original teaching/code; third-party exercise rights excluded"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "batchSha256": "REPLACE_WITH_PREFLIGHT_SHA256",
+  "approved": false,
+  "reviewer": "",
+  "checks": {
+    "rights": "not_run",
+    "semantics": "not_run",
+    "traceOracle": "not_run",
+    "fiveLanguages": "not_run",
+    "ui": "not_run"
+  },
+  "evidence": "Record actual test commands/results and reviewed problem IDs here. Do not change not_run to passed without doing the work."
+}

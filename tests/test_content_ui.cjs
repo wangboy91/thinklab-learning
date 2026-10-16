@@ -1,0 +1,13 @@
+const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
+const root=path.resolve(__dirname,'..'),elements={},listeners={},timers=new Map();let n=0;
+function el(id){return elements[id]??={id,innerHTML:'',textContent:'',value:id==='language'?'C#':'0',style:{},insertAdjacentHTML(){}}}
+const ctx={window:{addEventListener:(k,f)=>listeners[k]=f,scrollTo(){}},document:{getElementById:el,querySelectorAll:()=>[],addEventListener:(k,f)=>listeners[k]=f},location:{hash:'#'},localStorage:{getItem:()=>null,setItem(){}},navigator:{clipboard:{writeText:async()=>{}}},setInterval:fn=>{timers.set(++n,fn);return n},clearInterval:id=>timers.delete(id),Date};
+vm.createContext(ctx);
+for(const file of ['content.js','algorithms.js','codes.js','lessons.js','algorithms-extra.js','routes.js']){vm.runInContext(fs.readFileSync(path.join(root,'dist',file),'utf8'),ctx);for(const key of ['CONTENT','Algorithms','CODES'])ctx[key]=ctx.window[key]}
+vm.runInContext(fs.readFileSync(path.join(root,'dist/app.js'),'utf8'),ctx);
+const ids=Object.keys(ctx.window.LESSONS).map(Number);
+for(const id of ids){el('example').value='0';ctx.location.hash='#/problem/'+id;listeners.hashchange();assert.ok(el('app').innerHTML.includes('逐步推演'));assert.ok(!el('app').innerHTML.includes('已有资料，讲解待完善'));const initial=el('tokens').innerHTML;el('next').onclick();el('prev').onclick();assert.equal(el('tokens').innerHTML,initial);for(let i=0;i<3;i++){el('play').onclick();assert.equal(timers.size,1);el('play').onclick();assert.equal(timers.size,0)}let count=0;while(!el('next').disabled&&count++<300)el('next').onclick();assert.ok(count<300);assert.ok(el('step-count').textContent.includes('结果'));el('replay').onclick();assert.ok(el('step-count').textContent.includes('第 1 /'));for(const language of ['C#','Python','Java','JavaScript（Node.js）','TypeScript']){el('language').value=language;el('language').onchange();assert.equal(el('code').textContent,ctx.window.CODES[id][language])}el('play').onclick();ctx.location.hash='#';listeners.hashchange();assert.equal(timers.size,0)}
+assert.equal(ids.length,fs.readdirSync(path.join(root,'content/problems')).filter(p=>p.endsWith('.json')).length);assert.equal(ctx.window.CONTENT.catalog.length,JSON.parse(fs.readFileSync(path.join(root,'content/catalog.json'),'utf8')).catalog.length);
+const rows=ctx.window.ROUTES.map(r=>({id:r.id,count:r.problemIds.length,complete:r.problemIds.filter(id=>ctx.window.LESSONS[id]).length}));
+console.log('All '+ids.length+' pages, 5 languages, single-step reverse/replay/repeated play/timer switch and genuine complete status passed (DOM/clock mock). Routes:',JSON.stringify(rows));
+

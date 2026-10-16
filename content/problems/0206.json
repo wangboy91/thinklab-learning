@@ -1,0 +1,74 @@
+{
+  "title": "反转链表",
+  "difficulty": "简单",
+  "topic": "链表",
+  "concept": "保存后继 · 改next指向",
+  "time": "20 分钟",
+  "question": "给定单向链表的头节点，原地把所有next方向反过来，返回新的头节点。链表节点和数组不同；返回的是节点对象，节点值相同也仍是不同节点。",
+  "think": "把当前节点的next改成指向前一个节点后，原来的后半段从哪里继续找到？要先保存什么？",
+  "hints": [
+    "用previous记录已反转部分的头，current记录未处理部分的头。初始previous=null。",
+    "先保存nextSaved=current.next，再执行current.next=previous；保存步骤不能省。",
+    "previous前进到current，current前进到保存的nextSaved。current为空时，previous就是新头。"
+  ],
+  "explain": "N0(1)→N1(2)→N2(3)：先保存N1，把N0.next改成null，previous=N0、current=N1；再保存N2，把N1.next改成N0；最后N2.next改成N1。返回N2，沿next得到3→2→1。动画保留节点ID和每条实际next边，不用“倒过来显示一排数字”冒充反转。",
+  "why": "每轮previous指向已反转前缀，current指向尚未处理后缀。保存后继确保改边不会丢掉剩余节点。反转当前一条边后扩展前缀，两个指针前进，直到所有原节点都反转；没有创建替代节点。",
+  "complexity": "时间O(n)，每个节点一次；额外空间O(1)，只用三个节点引用。演示图与快照不属于参考算法的额外空间。",
+  "errors": [
+    "先改next再读取后继，丢掉原链。",
+    "只倒转节点值或创建新列表，没有原地反转节点关系。",
+    "返回原头而不是previous；把值相同的节点当同一个节点。"
+  ],
+  "exampleText": "1→2→3→4→5 变成5→4→3→2→1；空链表返回null。",
+  "challenge": "三个值都为7的节点反转后，节点ID顺序应怎样变化？单节点还需要连接谁？",
+  "boardLabel": "同一批节点 · next边和三个指针",
+  "trace": "reverseListTrace",
+  "codeNote": "参考包含自写ListNode定义以便独立运行；LeetCode已提供节点类时不要重复定义。动画values数组仅用于创建演示链，算法接收并返回真实节点。",
+  "examples": [
+    {
+      "label": "1→2→3 · 三个节点",
+      "values": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "label": "1→2→3→4→5",
+      "values": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "label": "7→7→7 · 看节点ID",
+      "values": [
+        7,
+        7,
+        7
+      ]
+    },
+    {
+      "label": "空链表",
+      "values": []
+    },
+    {
+      "label": "单节点0",
+      "values": [
+        0
+      ]
+    }
+  ],
+  "id": 206,
+  "domain": "algorithm",
+  "type": "algorithm_trace",
+  "source": {
+    "kind": "original_authoring",
+    "officialUrl": "https://leetcode.com/problems/reverse-linked-list/",
+    "officialVerifiedDate": "2026-10-13",
+    "license": "MIT for original teaching/code; third-party exercise rights excluded"
+  }
+}

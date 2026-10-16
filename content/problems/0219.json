@@ -1,0 +1,77 @@
+{
+  "title": "存在重复元素II",
+  "difficulty": "简单",
+  "topic": "滑动窗口",
+  "concept": "最近k个位置 · 有限集合",
+  "time": "15 分钟",
+  "question": "整数数组里是否存在两个不同下标，值相同而且下标距离不超过k？有则true，否则false。k可以是0，此时不同位置之间不可能满足。",
+  "think": "很久以前出现过同一个数还算吗？当前只需要检查哪些之前的位置？",
+  "hints": [
+    "朴素法检查每对不同位置，比较值与距离。与217不同，距离也重要。",
+    "集合只保存当前之前最近k个位置的数字，先检查当前值是否已存在。",
+    "没命中就加入当前；当i>=k时，移出nums[i-k]，为下一轮留最近k个。先检查，再移出，才不会漏掉距离刚好k的一对。"
+  ],
+  "explain": "[1,2,3,1]、k=3：读最后的1之前，集合保存位置0、1、2的数字，因此命中，距离3合格。[1,2,3,1,2,3]、k=2：每次只保留前两个位置，旧的相同值已离开窗口，所以false。加入时集合可短暂有k+1个，随后移出最老值；这两个步骤在动画里分别显示。",
+  "why": "检查位置i之前，集合恰好保存[max(0,i-k),i)的值，命中就对应一个不同且距离合格的位置。无命中时当前窗口值互不重复，加入后移除最老值为下一次维持这个条件；被移除位置对下一次已超过k。",
+  "complexity": "平均时间O(n)，每次查/加/移出平均很快；额外空间O(min(n,k+1))，加入后短暂多一个值。k=0直接false。动画快照开销另计。",
+  "errors": [
+    "用整个历史集合，会把过远的重复误判为true。",
+    "先移出i-k再检查，会漏距离恰好k的重复。",
+    "k=0时把当前值与自己匹配，或不删除过期数字。"
+  ],
+  "exampleText": "[1,2,3,1]/k3 → true；[1,0,1,1]/k1 → true；[1,2,3,1,2,3]/k2 → false。",
+  "challenge": "[1,2,1]的k=1和k=2为何不同？[1,1]、k=0为什么false？",
+  "boardLabel": "检查前只保留最近k个位置",
+  "trace": "nearbyWindowTrace",
+  "examples": [
+    {
+      "label": "[1,2,3,1], k=3 · 恰好边界",
+      "nums": [
+        1,
+        2,
+        3,
+        1
+      ],
+      "k": 3
+    },
+    {
+      "label": "[1,2,3,1,2,3], k=2 · 超距离",
+      "nums": [
+        1,
+        2,
+        3,
+        1,
+        2,
+        3
+      ],
+      "k": 2
+    },
+    {
+      "label": "[1,0,1,1], k=1",
+      "nums": [
+        1,
+        0,
+        1,
+        1
+      ],
+      "k": 1
+    },
+    {
+      "label": "[1,1], k=0",
+      "nums": [
+        1,
+        1
+      ],
+      "k": 0
+    }
+  ],
+  "id": 219,
+  "domain": "algorithm",
+  "type": "algorithm_trace",
+  "source": {
+    "kind": "original_authoring",
+    "officialUrl": "https://leetcode.com/problems/contains-duplicate-ii/",
+    "officialVerifiedDate": "2026-10-13",
+    "license": "MIT for original teaching/code; third-party exercise rights excluded"
+  }
+}
